@@ -48,10 +48,12 @@ const Login = (props) => {
 
     const emailChangeHandler = (event) => {
         dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
+        setFormIsValid(emailState.isValid && passwordState.isValid)
     };
 
     const passwordChangeHandler = (event) => {
         dispatchPassword({ type: 'USER_INPUT', val: event.target.value });
+        setFormIsValid(emailState.isValid && passwordState.isValid)
     };
 
     const emailValidateHandler = () => {
